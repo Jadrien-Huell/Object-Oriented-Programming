@@ -1,0 +1,14 @@
+class ThirdJavaProgram {
+  public static void main(String[] args) {
+    int a[];
+    int i;
+    
+    a = new int[10];
+
+    for (i = 0; i < 10; i++)
+      System.out.println("a[" + i + "] = " + a[i]);
+    a = null;
+    
+    // a[...] = 0 x10 in Output
+  }
+}
