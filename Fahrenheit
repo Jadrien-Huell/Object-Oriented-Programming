@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+class Fahrenheit {
+    public static void main(String[] args) {
+    
+    Scanner input = new Scanner(System.in);
+    System.out.println("--Celsius to Fahrenheit Conversion--");
+    System.out.print("Temperature in degrees Celsius: ");
+    double Centigrade = input.nextDouble();
+    double Fahrenheit_Conversion = ((9 * Centigrade) / 5) + 32;
+    
+    System.out.println(Centigrade + " degrees Celsius is " + Fahrenheit_Conversion + " degrees Fahrenheit!");
+    }
+}
