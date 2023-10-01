@@ -1,0 +1,34 @@
+class Main {
+
+  // Method 1
+  public static void BinaryConverter(String binaryStr) {
+    String[] binaryArr = binaryStr.split("");
+    int lastIndex = binaryArr.length - 1;
+    int sum = 0;
+    
+    for (int i = lastIndex; i >= 0; i--) {
+      int value = Integer.parseInt(binaryArr[i]);
+      sum += value * Math.pow(2, lastIndex - i);
+    }
+
+    System.out.println(sum);
+  }
+
+  // Method 2
+  public static void BinaryConverter1(String binaryStr) {
+    int lastIndex = binaryStr.length() - 1;
+    int sum = 0;
+    
+    for (int i = lastIndex; i >= 0; i--) {
+      int value = (binaryStr.charAt(i) == '1') ? 1 : 0;
+      sum += value * Math.pow(2, lastIndex - i);
+    }
+
+    System.out.println(sum);
+  }
+  
+  public static void main(String[] args) {
+    String binaryStr = "11011";
+    BinaryConverter1(binaryStr);
+  }
+}
