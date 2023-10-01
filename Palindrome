@@ -1,0 +1,28 @@
+import java.util.Scanner;
+class Main {
+  public static void main(String[] args) {
+    Scanner input = new Scanner(System.in);
+    int Number = 0;
+
+    while (true) {
+      System.out.print("Enter a number: ");
+      Number  = input.nextInt();
+      if (Number < 0) {break;} 
+      
+      int NumberLength = (""+Number).length();
+      int inversedNumber = 0;
+    
+      for (int i = 1; i <= NumberLength; ++i){
+        double remainder = Number % Math.pow(10, i);
+        double placeValue = remainder - remainder % Math.pow(10, i - 1);
+        double digit = placeValue / Math.pow(10, i - 1);
+        inversedNumber += digit * Math.pow(10, NumberLength - i);
+      }
+
+      String isPalindromeString = (Number == inversedNumber) ? Number + " is": Number + " is not";
+      System.out.println(isPalindromeString + " a palindrome with " + inversedNumber + "!");
+    }
+
+    System.out.println("Done!");
+  }
+}
