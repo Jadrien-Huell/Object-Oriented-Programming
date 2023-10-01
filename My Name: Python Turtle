@@ -1,0 +1,96 @@
+import turtle
+import math
+
+t = turtle.Turtle()
+
+cellSize = 45
+spacing = 20
+
+# Beveling
+length = 20
+angle = 45
+angle_rad = math.radians(angle)
+x = cellSize - length * math.cos(angle_rad)
+y = cellSize - length * math.sin(angle_rad)
+
+
+def draw(angle, move):
+  t.pensize(5)
+  t.color('black')
+  t.pendown()
+  t.right(angle)
+  t.forward(move)
+  t.penup()
+  t.setheading(0)
+
+
+def letter(index, xPos, yPos):
+  t.penup()
+  t.home()
+  t.setpos((cellSize + spacing) * (index - 1) + xPos - 230, yPos)
+
+
+#J
+letter(1, cellSize, 0)
+draw(-90, -cellSize - y)
+draw(-angle, -length)
+draw(0, -x / 2)
+draw(angle, -length)
+
+#A
+letter(2, 0, -cellSize * 2)
+draw(-90, cellSize + y)
+draw(-angle, length)
+draw(0, x / 2)
+draw(angle, length)
+draw(-90, -cellSize - y)
+letter(2, 0, -cellSize)
+draw(0, cellSize)
+
+#D
+letter(3, 0, 0)
+draw(0, x)
+draw(angle, length)
+draw(90, y * 2)
+draw(-angle, -length)
+draw(0, -x)
+draw(-90, cellSize * 2)
+
+#R
+letter(4, 0, 0)
+draw(0, x)
+draw(angle, length)
+draw(90, y / 2)
+draw(-angle, -length)
+draw(angle, length)
+draw(90, y)
+letter(4, 0, 0)
+draw(90, cellSize * 2)
+
+#I
+letter(5, 0, 0)
+draw(0, cellSize)
+letter(5, cellSize / 2, 0)
+draw(90, cellSize * 2)
+letter(5, 0, -cellSize * 2)
+draw(0, cellSize)
+
+#E
+letter(6, 0, 0)
+draw(90, cellSize * 2)
+letter(6, 0, 0)
+draw(0, cellSize)
+letter(6, 0, -cellSize)
+draw(0, cellSize * 0.8)
+letter(6, 0, -cellSize * 2)
+draw(0, cellSize)
+
+#N
+letter(7, 0, 0)
+draw(90, cellSize * 2)
+letter(7, 0, 0)
+draw(angle, length)
+draw(0, x / 2)
+draw(angle, length)
+letter(7, cellSize, 0)
+draw(90, cellSize * 2)
